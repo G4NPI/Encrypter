@@ -1,0 +1,46 @@
+@media screen and (max-width: 1024px){
+    /* header */
+    header {
+        padding: 5px 1em;
+    }
+
+    /* main */
+    main {
+        padding: 4em 1em;
+    }
+}
+
+@media screen and (max-width: 850px){
+    /* header > .title-container */
+    .title-container h1.title {
+        font-size: 25px;
+        letter-spacing: 5px;
+    }
+
+    /* main */
+    main {
+        padding: 2em 1em;
+    }
+
+    /* main > .interface */
+    .interface {
+        flex-direction: column-reverse;
+    }
+
+    /* main > .interface > .areas */
+    .areas i#turn {
+        padding: 10px;
+        font-size: 22px;
+    }
+
+    /* main > .interface > .areas > .area-container[1] */
+    .area-container:last-of-type::before {
+        top: initial; bottom: 0;
+        border-radius: 0 0 8px 8px;
+    }
+
+    /* main > .interface > .warning */
+    .warning p.wrn-msg {
+        text-align: center;
+    }
+}

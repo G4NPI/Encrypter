@@ -1,0 +1,176 @@
+:root {
+    --shadow: 0 0 3px #000;
+
+    --mode-pos: 0;
+    --mode-shadow: none;
+
+    --clean-btn-color: #da4453;
+
+    --bg-color: #2f343f;
+    --bg-color-alt: #404552;
+    --ft-color: #d3dae3;
+    --ft-color-alt: #5294e2;
+    --ft-color-int : #898d99;
+}
+
+::selection {
+    background-color: var(--ft-color-alt);
+    color: var(--ft-color);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--ft-color);
+}
+
+/* header */
+header {
+    padding: 10px 4em;
+    box-shadow: var(--shadow);
+}
+
+/* header > .title-container */
+.title-container {
+    display: inline-block;
+}
+.title-container:hover h1.title::before {
+    content: "de";
+}
+.title-container h1.title {
+    cursor: default;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+}
+.title-container h1.title::before {
+    content: "en";
+    color: var(--ft-color-alt);
+}
+
+/* main */
+main {
+    display: flex;
+    flex-direction: column;
+    max-width: calc(1920px - 400px);
+    margin: 0 auto;
+    padding: 4em;
+    gap: 125px;
+}
+
+/* main > .interface */
+.interface {
+    display: inherit;
+    flex-direction: column;
+    gap: 13px;
+}
+
+/* main > .interface > .areas */
+.areas {
+    display: inherit;
+    flex-wrap: wrap;
+    position: relative;
+    gap: inherit;
+}
+.areas i {
+    cursor: pointer;
+    font-size: 22px;
+}
+.areas i#turn {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 8px;
+    border-radius: 50px;
+    font-size: 18px;
+    background-color: var(--ft-color-alt);
+}
+
+/* main > .interface > .areas > .area-container */
+.area-container {
+    display: inherit;
+    flex-grow: 1;
+    flex-basis: 403px;
+    height: 250px;
+    padding: 20px 25px;
+    gap: inherit;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    background-color: var(--bg-color-alt);
+}
+.area-container textarea {
+    width: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 18px;
+    background-color: var(--bg-color-alt);
+    color: var(--ft-color);
+}
+.area-container i {
+    display: none;
+}
+.area-container i#clean {
+    align-self: flex-start;
+    color: var(--clean-btn-color);
+}
+.area-container i#copy {
+    align-self: flex-end;
+}
+
+/* main > .interface > .areas > .area-container[1] */
+.area-container:last-of-type {
+    position: inherit;
+}
+.area-container:last-of-type::before {
+    content: attr(data-before);
+    position: absolute;
+    top: 0; left: 0;
+    transform: translateY(var(--mode-pos));
+    width: 7em;
+    padding: 8px 0;
+    border-radius: 8px 8px 0 0;
+    box-shadow: var(--mode-shadow);
+    text-align: center;
+    background-color: var(--bg-color-alt);
+    z-index: -1;
+}
+.area-container:last-of-type textarea::placeholder {
+    color: var(--ft-color-int);
+}
+
+/* main > .interface > .warning */
+.warning p.wrn-msg {
+    font-size: 13px;
+}
+.warning p.wrn-msg i {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+/* main > .information-links */
+.information-links {
+    display: inherit;
+    align-self: center;
+    gap: 30px;
+}
+.information-links a.link {
+    width: 60px; height: 60px;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    font-size: 28px;
+    line-height: 60px;
+    text-align: center;
+    background-color: var(--ft-color);
+    color: var(--bg-color);
+}
+.information-links a.link:hover {
+    background-color: var(--ft-color-alt);
+    color: var(--ft-color);
+}
