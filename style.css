@@ -154,23 +154,24 @@ main {
     font-size: 16px;
 }
 
-/* main > .information-links */
-.information-links {
-    display: inherit;
-    align-self: center;
-    gap: 30px;
+/* main > .information */
+.information {
+    place-self: center;
 }
-.information-links a.link {
+.information .links {
+    display: flex;
+}
+.information .links a.link {
     width: 60px; height: 60px;
     border-radius: 50px;
     box-shadow: var(--shadow);
-    font-size: 28px;
+    font-size: 2em;
     line-height: 60px;
     text-align: center;
     background-color: var(--ft-color);
     color: var(--bg-color);
 }
-.information-links a.link:hover {
+.information .links a.link:hover {
     background-color: var(--ft-color-alt);
     color: var(--ft-color);
 }
