@@ -55,47 +55,45 @@ header {
 
 /* main */
 main {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
     max-width: calc(1920px - 400px);
     margin: 0 auto;
-    padding: 4em;
-    gap: 125px;
+    padding: 4em 4em 0;
 }
 
 /* main > .interface */
 .interface {
-    display: inherit;
+    display: flex;
     flex-direction: column;
     gap: 13px;
 }
 
 /* main > .interface > .areas */
 .areas {
-    display: inherit;
-    flex-wrap: wrap;
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(378px, 1fr));
     gap: inherit;
 }
 .areas i {
+    height: 35px;
+    min-width: 35px;
     cursor: pointer;
     font-size: 22px;
+    line-height: 35px;
+    text-align: center;
 }
 .areas i#turn {
+    place-self: center;
     position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 8px;
-    border-radius: 50px;
+    border-radius: 100%;
     font-size: 18px;
     background-color: var(--ft-color-alt);
 }
 
-/* main > .interface > .areas > .area-container */
-.area-container {
-    display: inherit;
-    flex-grow: 1;
-    flex-basis: 403px;
+/* main > .interface > .areas > .area */
+.area {
+    display: flex;
     height: 250px;
     padding: 20px 25px;
     gap: inherit;
@@ -103,7 +101,7 @@ main {
     box-shadow: var(--shadow);
     background-color: var(--bg-color-alt);
 }
-.area-container textarea {
+.area textarea {
     width: 100%;
     resize: none;
     border: none;
@@ -113,22 +111,21 @@ main {
     background-color: var(--bg-color-alt);
     color: var(--ft-color);
 }
-.area-container i {
+.area i {
     display: none;
 }
-.area-container i#clean {
-    align-self: flex-start;
+.area i#clean {
     color: var(--clean-btn-color);
 }
-.area-container i#copy {
-    align-self: flex-end;
+.area i#copy {
+    align-self: self-end;
 }
 
-/* main > .interface > .areas > .area-container[1] */
-.area-container:last-of-type {
-    position: inherit;
+/* main > .interface > .areas > .area[1] */
+.area:last-of-type {
+    position: relative;
 }
-.area-container:last-of-type::before {
+.area:last-of-type::before {
     content: attr(data-before);
     position: absolute;
     top: 0; left: 0;
@@ -141,7 +138,7 @@ main {
     background-color: var(--bg-color-alt);
     z-index: -1;
 }
-.area-container:last-of-type textarea::placeholder {
+.area:last-of-type textarea::placeholder {
     color: var(--ft-color-int);
 }
 
@@ -158,12 +155,13 @@ main {
 .information {
     place-self: center;
 }
-.information .links {
+/* main > .information .links */
+.links {
     display: flex;
 }
-.information .links a.link {
+.links a.link {
     width: 60px; height: 60px;
-    border-radius: 50px;
+    border-radius: 100%;
     box-shadow: var(--shadow);
     font-size: 2em;
     line-height: 60px;
@@ -171,7 +169,7 @@ main {
     background-color: var(--ft-color);
     color: var(--bg-color);
 }
-.information .links a.link:hover {
+.links a.link:hover {
     background-color: var(--ft-color-alt);
     color: var(--ft-color);
 }
