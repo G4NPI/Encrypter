@@ -68,6 +68,15 @@ main {
     flex-direction: column;
     gap: 13px;
 }
+.interface p.important-msg {
+    display: inherit;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+.interface p.important-msg i {
+    font-size: initial;
+}
 
 /* main > .interface > .areas */
 .areas {
@@ -140,15 +149,6 @@ main {
 }
 .area:last-of-type textarea::placeholder {
     color: var(--ft-color-int);
-}
-
-/* main > .interface > .warning */
-.warning p.wrn-msg {
-    font-size: 13px;
-}
-.warning p.wrn-msg i {
-    margin-right: 10px;
-    font-size: 16px;
 }
 
 /* main > .information */

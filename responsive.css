@@ -26,15 +26,14 @@
     .interface {
         flex-direction: column-reverse;
     }
+    .interface p.important-msg {
+        align-self: center;
+        padding: 0 2rem;
+    }
 
     /* main > .interface > .areas > .area[1] */
     .area:last-of-type::before {
         top: initial; bottom: 0;
         border-radius: 0 0 8px 8px;
-    }
-
-    /* main > .interface > .warning */
-    .warning p.wrn-msg {
-        text-align: center;
     }
 }
