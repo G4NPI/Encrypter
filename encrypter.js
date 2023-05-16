@@ -54,10 +54,10 @@ document.addEventListener('DOMContentLoaded', function(){
 input.addEventListener('input', () => {
     output.value = mode ? encrypt(input.value) : decrypt(input.value);
 
-    root.style.setProperty('--mode-pos', output.value !== '' ? window.innerWidth <= 850 ? '100%' : '-100%' : '0');
+    root.style.setProperty('--mode-pos', output.value !== '' ? window.innerWidth <= 700 ? '100%' : '-100%' : '0');
     root.style.setProperty('--mode-shadow', output.value !== '' ? getComputedStyle(root).getPropertyValue('--shadow') : 'none');
 
-    output.parentElement.style[`border${window.innerWidth <= 850 ? 'Bottom' : 'Top'}LeftRadius`] = output.value !== '' ? '0' : '8px';
+    output.parentElement.style[`border${window.innerWidth <= 700 ? 'Bottom' : 'Top'}LeftRadius`] = output.value !== '' ? '0' : '8px';
 
     cleanBtn.style.display = input.value !== '' ? 'block' : 'none';
     copyBtn.style.display = output.value !== '' ? 'block' : 'none';
@@ -85,7 +85,7 @@ cleanBtn.addEventListener('click', () => {
     root.style.setProperty('--mode-pos', '0');
     root.style.setProperty('--mode-shadow', 'none');
 
-    output.parentElement.style[`border${window.innerWidth <= 850 ? 'Bottom' : 'Top'}LeftRadius`] = '8px';
+    output.parentElement.style[`border${window.innerWidth <= 700 ? 'Bottom' : 'Top'}LeftRadius`] = '8px';
 
     cleanBtn.style.display = 'none';
     copyBtn.style.display = 'none';

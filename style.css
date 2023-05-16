@@ -1,4 +1,6 @@
 :root {
+    --sides: 4em;
+
     --shadow: 0 0 3px #000;
 
     --mode-pos: 0;
@@ -35,7 +37,7 @@ body {
 header {
     display: flex;
     flex-wrap: wrap;
-    padding: 10px 4em;
+    padding: 10px var(--sides);
     box-shadow: var(--shadow);
 }
 header h1.title {
@@ -67,7 +69,7 @@ main {
     grid-template-rows: repeat(2, 1fr);
     max-width: calc(1920px - 400px);
     margin: 0 auto;
-    padding: 4em 4em 0;
+    padding: 4em var(--sides) 0;
 }
 
 /* main > .interface */
@@ -77,19 +79,18 @@ main {
     gap: 13px;
 }
 .interface p.important-msg {
-    display: inherit;
-    align-items: center;
+    display: flex;
     gap: 8px;
     font-size: 13px;
 }
-.interface p.important-msg i {
+.interface p.important-msg > i {
     font-size: initial;
 }
 
 /* main > .interface > .areas */
 .areas {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(378px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: inherit;
 }
 .areas i {
@@ -118,24 +119,24 @@ main {
     box-shadow: var(--shadow);
     background-color: var(--bg-color-alt);
 }
-.area textarea {
+.area > textarea {
     width: 100%;
     resize: none;
     border: none;
     outline: none;
     font-family: inherit;
-    font-size: 18px;
+    font-size: inherit;
     background-color: var(--bg-color-alt);
     color: var(--ft-color);
 }
-.area i {
+.area > i {
     display: none;
 }
 .area i#clean {
     color: var(--clean-btn-color);
 }
 .area i#copy {
-    align-self: self-end;
+    align-self: flex-end;
 }
 
 /* main > .interface > .areas > .area[1] */
@@ -155,7 +156,7 @@ main {
     background-color: var(--bg-color-alt);
     z-index: -1;
 }
-.area:last-of-type textarea::placeholder {
+.area:last-of-type > textarea::placeholder {
     color: var(--ft-color-int);
 }
 
@@ -163,16 +164,18 @@ main {
 .information {
     place-self: center;
 }
+
 /* main > .information .links */
 .links {
     display: flex;
 }
 .links a.link {
-    width: 60px; height: 60px;
+    width: 4rem;
+    height: 4rem;
     border-radius: 100%;
     box-shadow: var(--shadow);
     font-size: 2em;
-    line-height: 60px;
+    line-height: 4rem;
     text-align: center;
     background-color: var(--ft-color);
     color: var(--bg-color);
