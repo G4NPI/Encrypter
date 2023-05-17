@@ -160,16 +160,13 @@ main {
     color: var(--ft-color-int);
 }
 
-/* main > .information */
-.information {
-    place-self: center;
-}
-
-/* main > .information .links */
+/* main > .links */
 .links {
     display: flex;
+    place-self: center;
+    gap: 2em;
 }
-.links a.link {
+.links > a {
     width: 4rem;
     height: 4rem;
     border-radius: 100%;
@@ -180,7 +177,77 @@ main {
     background-color: var(--ft-color);
     color: var(--bg-color);
 }
-.links a.link:hover {
+.links > a:hover {
     background-color: var(--ft-color-alt);
     color: var(--ft-color);
+}
+
+/* dialog */
+dialog {
+    width: 38em;
+    margin: auto;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    background-color: var(--bg-color);
+    color: var(--ft-color);
+}
+dialog::backdrop {
+    background-color: #5293e21a;
+    backdrop-filter: blur(5px);
+}
+
+/* dialog > .top-info */
+.top-info {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    place-items: center;
+    height: 32px;
+}
+.top-info > * {
+    font-size: 20px;
+}
+.top-info h2.person {
+    text-transform: uppercase;
+}
+.top-info h2.person > span {
+    color: var(--ft-color-alt);
+}
+.top-info i#close {
+    width: 35px;
+    cursor: pointer;
+    text-align: center;
+    color: var(--clean-btn-color);
+}
+
+/* dialog > .bottom-info */
+.bottom-info > * {
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    background-color: var(--bg-color-alt);
+}
+.bottom-info p.description {
+    padding: 10px;
+}
+.bottom-info p.description > span {
+    text-transform: capitalize;
+    color: var(--ft-color-alt);
+}
+
+/* dialog > .bottom-info > .mentions */
+.mentions {
+    list-style-type: none;
+}
+.mentions > li {
+    padding: 10px;
+}
+.mentions > li:not(:last-of-type) {
+    border-bottom: 2px solid #2f343f;
+}
+.mentions > li > a {
+    font-weight: bold;
+    text-transform: capitalize;
+    color: var(--ft-color-alt);
 }

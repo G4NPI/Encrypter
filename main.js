@@ -1,4 +1,5 @@
 'use strict';
+/* ¿__? */
 const binary = document.getElementById('binary');
 
 let ix = 0, iy = 0;
@@ -28,3 +29,9 @@ setInterval((miliseconds, __) => {
         }
     }
 }, 450, 450, ['61', '6c', '75', '72', '61']);
+
+/* Modal: Information */
+const infoModal = document.getElementById('information');
+
+document.getElementById('info').addEventListener('click', () => infoModal.showModal());
+document.getElementById('close').addEventListener('click', () => infoModal.close());
